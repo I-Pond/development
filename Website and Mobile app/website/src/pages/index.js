@@ -1,51 +1,42 @@
+import Image from "next/image";
 import Progress from "@/components/card/progress";
 
 export default function Dashboard() {
   return (
     <>
-      <main>
-        <div
-          className="title text-center font-mono h-screen"
-          style={{ borderTop: "1px solid black" }}
-        >
-          <div className="title-text">
-            <h1>Welcome</h1>
-            <span>Automation water quality control.</span>
-          </div>
+      <main className="grid grid-cols-2 gap-2 justify-center items-center h-screen">
+        <div className="col-span-1 pl-10">
+          <h1 style={{ color: "#0e2954" }}>My-Ipond</h1>
+          <p className="text-xl">
+            Welcome to iPond, your comprehensive destination for measuring water
+            turbidity, pH, and temperature, providing you with accurate
+            information to maintain the cleanliness and health of your water.
+          </p>
+          <button className="try-me w-32 h-10">Let's Try</button>
+        </div>
+        <div className="img-card grid grid-cols-2 gap-5 m-3">
+          <Image
+            src="https://images.unsplash.com/photo-1659835347242-97835d671db7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
+            width={250}
+            height={250}
+            sizes="(max-width: 250px)"
+          />
+          <Image
+            src="/screaming_cat.png"
+            width={250}
+            height={250}
+            sizes="(max-width: 250px)"
+          />
+          <Image src="/screaming_cat.png" width={250} height={250} />
+          <Image src="/screaming_cat.png" width={250} height={250} />
         </div>
       </main>
 
-      <div className="text-center m-10">
-        <h1 className="font-serif">Status</h1>
-        <div className="m-10 grid grid-rows-3 gap-3">
-          <div className="grid grid-cols-2 gap-2 items-center justify-center">
-            <Progress name="pH" percent="15" />
-            <div className="text-center">
-              <h2>Daily Report</h2>
-              <table className="daily-report">
-                <tr>
-                  <th>#</th>
-                  <th>Date</th>
-                  <th>Report</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>3 Mei 2023</td>
-                  <td>no data</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          {/* 
-          <div className="grid grid-cols-2 gap-2">
-            <Progress name="Turbidity" percent="0" />
-            <h2>Daily Report</h2>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2">
-            <Progress name="Temperature" percent="0" />
-            <h2>Daily Report</h2>
-          </div> */}
+      <div className="welcome h-screen">
+        <div className="w-1/2 m-10">
+          <h1>
+            Welcome to iPond, where we make water clarity testing smarter!
+          </h1>
         </div>
       </div>
     </>

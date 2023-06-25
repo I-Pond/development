@@ -1,33 +1,42 @@
 import Image from "next/image";
+import logo from "../../public/logo_lab_putih.png";
 
 export default function Navigation() {
   return (
-    <div className="grid grid-cols-4 max-h-fit m-2 justify-center items-center text-center">
-      <div className="flex justify-center items-center">
+    <nav className="grid grid-cols-2 gap-5 justify-center text-center navbar text-white font-mono min-h-10">
+      <div className="justify-center items-center ml-10 col-start-1">
         <a href="/">
           <Image
-            src="/logo.png"
+            src={logo}
             alt="MBC Laboratory"
-            width={250}
-            height={250}
-            sizes="(max-width: 250px)"
+            style={{ width: "50%", height: "auto" }}
           />
         </a>
       </div>
-      <div className="col-span-2 font-mono min-h-fit">
-        <h1>My I-Pond</h1>
+
+      <div className="col-end-1 grid grid-cols-3 gap-3 mx-3">
+        <span>
+          <a href="/daily" style={{ textDecoration: "none", color: "inherit" }}>
+            <p>Daily Report</p>
+          </a>
+        </span>
+        <span>
+          <a
+            href="/weekly"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <p>Weekly Report</p>
+          </a>
+        </span>
+        <span>
+          <a
+            href="/monthly"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <p>Monthly Report</p>
+          </a>
+        </span>
       </div>
-      <div className="flex justify-center items-center">
-        <a href="https://www.instagram.com/mbclab/" target="_blank">
-          {/* <Image src="/logo_circle.ico" alt="button" width={100} height={100} /> */}
-          <img
-            src="./logo_circle.ico"
-            alt="burger"
-            className="max-h-12"
-            style={{ float: "right" }}
-          />
-        </a>
-      </div>
-    </div>
+    </nav>
   );
 }
