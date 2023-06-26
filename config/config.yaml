@@ -1,0 +1,26 @@
+#BERISI RAW DATA
+data_raw: /myipond/src/datafix.csv
+data_encoded: /myipond/src/datafix_encoded.csv
+data_hari : /myipond/src/datatanya_fix.csv
+data_gat: /myipond/src/datafix_gabungan.csv
+#tipe_data
+datetime_cols : 
+- tanggal
+float_columns:
+- tekanan_udara
+int_cols: 
+- hujan
+- kelembabpan
+- temperature
+- tingkat_cahaya
+target : keterangan 
+predictors: 
+- hujan
+- kelembabpan 
+- tekanan_udara
+- temperature 
+- tingkat_cahaya
+
+#SEMUA TINGGAL DIGANTI DENGAN PARAMETER DARI AIR QUALITY
+#MODELS EMANG KOSONG TUNGGU NANTI PAS WAKTU BIKIN MODEL DI NOTEBOOKS ATAU MENGELOLA MACHINE LEARNINGNYA
+#DI SRC BAKAL ADA TEMPAT DIMANA BUAT DATA, CLEANSING, DAN DBS NYA
