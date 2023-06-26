@@ -24,8 +24,7 @@ waktu_sekrng = current_date.strftime("%H:%M:%S")
 
 st.title('Water Quality Sensor For Nila Fisherman')
 st.header('Input hasil dari data IoT untuk dapat memberikan hasil kekeruhan: ')
-number = [0,1,2,3,4,5,6]
-turbinity = st.selectbox('Masukin Tingkat Kekeruhan:',number)
+turbinity = st.number_input('Masukin Tingkat Kekeruhan:')
 ph = st.number_input('Masukin Ph:')
 temperature = st.number_input('Masukin Temperature:')
 
