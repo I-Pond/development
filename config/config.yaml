@@ -1,5 +1,8 @@
 #BERISI RAW DATA
-data_raw: /weather_station/src/dataweatherstation.csv
+data_raw: /myipond/src/datafix.csv
+data_encoded: /myipond/src/datafix_encoded.csv
+data_hari : /myipond/src/datatanya_fix.csv
+data_gat: /myipond/src/datafix_gabungan.csv
 #tipe_data
 datetime_cols : 
 - tanggal

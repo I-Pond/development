@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import requests
 import psycopg2
-
+from src.dbs import db_streamlit
 col1, col2 = st.columns(2)
 col2.error("""
 Adam Hadi Pratama 
@@ -11,11 +11,11 @@ Adam Hadi Pratama
 Data Enthusiast
 Universitas Telkom
 """)
-POSTGRES_USER = "postgres"
-POSTGRES_PASSWORD = "adamdvimprez7"
-POSTGRES_SERVER = "localhost"
-POSTGRES_PORT = "5432"
-POSTGRES_DB = "weather_station"
+POSTGRES_USER = db_streamlit['user']
+POSTGRES_PASSWORD = db_streamlit['password']
+POSTGRES_SERVER = db_streamlit['host']
+POSTGRES_PORT = db_streamlit['port']
+POSTGRES_DB = db_streamlit['DB_NAME']
 
 conn = psycopg2.connect(
     host=POSTGRES_SERVER,

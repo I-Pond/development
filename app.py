@@ -5,17 +5,18 @@ import pandas as pd
 import joblib 
 import yaml 
 import psycopg2
+from src.dbs import db_postgre
 
 with open('/myipond/config/config.yaml','r') as file:
     config = yaml.safe_load(file)
 
 model = joblib.load('/myipond/model.pkl')
 
-POSTGRES_USER = "postgres"
-POSTGRES_PASSWORD = "adamdvimprez7"
-POSTGRES_SERVER = "localhost"
-POSTGRES_PORT = "5432"
-POSTGRES_DB = "wst"
+POSTGRES_USER = db_postgre['user']
+POSTGRES_PASSWORD = db_postgre['password']
+POSTGRES_SERVER = db_postgre['host']
+POSTGRES_PORT = db_postgre['port']
+POSTGRES_DB = db_postgre['DB_NAME']
 
 conn = psycopg2.connect(
     host=POSTGRES_SERVER,
