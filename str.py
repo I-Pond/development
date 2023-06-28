@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import pyrebase
+# import pyrebase
 from src.dbs import config_dt_streamlit
 from datetime import datetime
 
@@ -16,8 +16,8 @@ def predict_weather(turbinity,temperature,ph):
     prediction = model.predict(input_data)
     return prediction[0]
 
-firebase = pyrebase.initialize_app(config_dt_streamlit)
-db = firebase.database()
+# firebase = pyrebase.initialize_app(config_dt_streamlit)
+# db = firebase.database()
 # current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S" )
 current_date = datetime.now()
 waktu_sekrng = current_date.strftime("%H:%M:%S")
@@ -42,6 +42,6 @@ if st.button('Predict'):
         'tanggal': current_date.date().isoformat(), 
         'waktu': waktu_sekrng
     }
-    db.child('prediksi_cuaca').push(data)
+    # db.child('prediksi_cuaca').push(data)
 
     st.success('Prediksi berhasil didistribusikan ke Firebase.')

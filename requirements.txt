@@ -1,5 +1,7 @@
 numpy==1.23.4
 pandas==1.5.0
 scikit-learn==1.1.2
-Pillow==9.2.0
-pyrebase==3.0.27
+pydantic == 1.10.9
+fastapi == 0.98.0
+uvicorn == 0.22.0
+joblib == 1.2.0
