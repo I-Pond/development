@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Changing directory
-      run: cd ../'Website and Mobile app'/website
+      run: cd ./'Website and Mobile app'/website
       
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
