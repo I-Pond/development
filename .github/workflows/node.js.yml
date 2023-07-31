@@ -20,9 +20,6 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Changing directory
-      run: cd ./'Website and Mobile app'/website
-      
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -31,9 +28,11 @@ jobs:
         cache: 'npm'
         
     - name: Installing Depedencies
+      working-directory: './Website and Mobile app/website'
       run: npm ci
      
     - name: Building Next.js
+      working-directory: './Website and Mobile app/website'
       run: npm run build --if-present
     
     - name: Creating release
