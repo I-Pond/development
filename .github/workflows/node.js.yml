@@ -13,9 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    env:
-      working-directory: './Website and Mobile app/website'
 
     strategy:
       matrix:
@@ -34,11 +31,9 @@ jobs:
         
     - name: Installing Depedencies
       run: npm ci
-      working-directory: ${{env.working-directory}}
      
     - name: Building Next.js
       run: npm run build --if-present
-      working-directory: ${{env.working-directory}}
     
     - name: Creating release
       uses: marvinpinto/action-automatic-releases@latest
