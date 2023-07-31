@@ -21,6 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - working-directory: './Website and Mobile app/website'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -28,11 +29,9 @@ jobs:
         cache: 'npm'
         
     - name: Installing Depedencies
-      working-directory: './Website and Mobile app/website'
       run: npm ci
      
     - name: Building Next.js
-      working-directory: './Website and Mobile app/website'
       run: npm run build --if-present
     
     - name: Creating release
