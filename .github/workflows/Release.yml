@@ -17,6 +17,6 @@ jobs:
     - name: Creating release
       uses: marvinpinto/action-automatic-releases@latest
       with:
-        repo-token: ${{secrets.GITHUB_RELEASE}}
+        repo-token: ${{secrets.RELEASE}}
         title: Testing
         files: ./'Website and Mobile app'/website
