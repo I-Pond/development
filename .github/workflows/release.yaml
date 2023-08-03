@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [18.x, 20.x]
+        version: [18.x]
 
     steps:
       - name: Locating source code
@@ -22,7 +22,7 @@ jobs:
           node-version: ${{matrix.version}}
 
       - name: Changing directory
-        run: 'cd Website and Mobile app\website'
+        run: "cd Website and Mobile app/website"
 
       - name: Installing depedency
         run: "npm ci"
