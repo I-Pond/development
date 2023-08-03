@@ -28,9 +28,7 @@ jobs:
           npm run build
 
       - name: Releasing
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          tag_name: testing
-          release_name: testing purpose
+          repo_token: ${{secrets.GITHUB_TOKEN}}
+          automatic_release_tag: latest
