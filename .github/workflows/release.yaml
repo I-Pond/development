@@ -21,11 +21,10 @@ jobs:
         with:
           node-version: ${{matrix.version}}
 
-      - name: Changing directory
-        run: "cd ./website"
-
       - name: Installing depedency
+        working-directory: ./website
         run: "npm ci"
 
       - name: Building next.js
+        working-directory: ./website
         run: "npm run build"
