@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build_and_release:
     runs-on: [ubuntu-latest]
 
     strategy:
@@ -21,10 +21,13 @@ jobs:
         with:
           node-version: ${{matrix.version}}
 
-      - name: Installing depedency
+      - name: Install and build next.js
         working-directory: ./website
-        run: "npm ci"
+        run: |
+          npm ci
+          npm run build
 
-      - name: Building next.js
-        working-directory: ./website
-        run: "npm run build"
+      - name: Releasing
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{secrets.GITHUB_TOKEN}}
