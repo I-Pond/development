@@ -22,7 +22,7 @@ jobs:
           node-version: ${{matrix.version}}
 
       - name: Changing directory
-        run: "cd Website and Mobile app/website"
+        run: "cd ./website"
 
       - name: Installing depedency
         run: "npm ci"
