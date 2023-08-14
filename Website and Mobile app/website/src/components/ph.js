@@ -10,7 +10,7 @@ export default function ph({ state, total_data = 1 }) {
 
   const handleDaily = async () => {
     const ref = dataRef();
-    const quer = query(ref, limitToLast(1));
+    const quer = query(ref, limitToLast(total_data));
     await onValue(quer, (snap) => {
       const obj = Object.values(snap.val());
       setData(obj[0].ph);
