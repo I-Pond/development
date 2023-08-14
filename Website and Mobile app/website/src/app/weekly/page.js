@@ -3,6 +3,7 @@ import Temp from "@/components/temperature";
 import Clarity from "@/components/clarity";
 
 export default async function page() {
+  const data = 200;
   return (
     <main>
       <section
@@ -12,7 +13,7 @@ export default async function page() {
         {/* PH Section */}
         <div>
           <div>
-            <PH state="daily" />
+            <PH state="weekly" total_data={data} />
           </div>
         </div>
         <div className="mr-10">
@@ -48,7 +49,7 @@ export default async function page() {
       >
         <div>
           <div>
-            <Temp state="daily" />
+            <Temp state="weekly" total_data={data} />
           </div>
         </div>
         <div className="mr-10">
@@ -81,7 +82,7 @@ export default async function page() {
       >
         <div>
           <div>
-            <Clarity state="daily" />
+            <Clarity state="weekly" total_data={data} />
           </div>
         </div>
         <div className="mr-10">

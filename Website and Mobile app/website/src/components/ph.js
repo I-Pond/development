@@ -5,21 +5,37 @@ import { dataRef } from "@/utils/firebase";
 import { limitToLast, onValue, query } from "firebase/database";
 import { useEffect, useState } from "react";
 
-export default function ph({ state }) {
-  const [data, setdata] = useState(0);
+export default function ph({ state, total_data = 1 }) {
+  const [data, setData] = useState(0);
 
   const handleDaily = async () => {
     const ref = dataRef();
     const quer = query(ref, limitToLast(1));
     await onValue(quer, (snap) => {
       const obj = Object.values(snap.val());
-      setdata(obj[0].ph);
+      setData(obj[0].ph);
     });
   };
 
   const handleWeekly = async () => {
     const ref = dataRef();
-    const quer = query(ref);
+    const quer = query(ref, limitToLast(total_data));
+    await onValue(quer, (snap) => {
+      let total_ph = 0.0;
+      let total_temp = 0.0;
+      let total_tur = 0.0;
+      const obj = Object.values(snap.val());
+      obj.forEach((data) => {
+        const ph = parseFloat(data.ph);
+        const turbidity = parseFloat(data.Turbinity);
+        const temp = parseFloat(data.Temperature);
+        total_ph = ph + total_ph;
+        total_temp = temp + total_temp;
+        total_tur = turbidity + total_tur;
+      });
+      console.log(total_data, total_ph, total_temp, total_tur);
+      setData((total_ph / total_data).toFixed(2));
+    });
   };
 
   useEffect(() => {
@@ -29,6 +45,7 @@ export default function ph({ state }) {
         break;
 
       case "weekly":
+        handleWeekly();
         break;
 
       case "monthly":
