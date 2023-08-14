@@ -2,24 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  border: 1px solid black;
-} */
-/* 
-.title {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-} */
-
-.title {
-  background-color: aqua;
+.navbar {
+  background-color: #0e2954;
 }
 
-.title-text {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+main .img-card img {
+  border-radius: 10%;
+}
+
+main .try-me {
+  border: 1px none none;
+  border-radius: 10px;
+  background-color: #0e2954;
+  color: white;
+}
+
+.welcome {
+  background: rgb(247, 249, 252);
+  background: linear-gradient(
+    180deg,
+    rgba(247, 249, 252, 1) 0%,
+    rgba(1, 20, 34, 1) 100%
+  );
 }

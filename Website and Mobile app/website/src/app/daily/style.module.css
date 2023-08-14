@@ -1,0 +1,9 @@
+.button {
+  border: none;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+.active {
+  background-color: #0e2954;
+}
