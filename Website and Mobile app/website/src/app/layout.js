@@ -24,31 +24,31 @@ export default function RootLayout({ children }) {
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 mx-3 items-center text-lg">
+            <div className="grid grid-cols-2 mx-3 items-center text-lg">
               <span>
                 <a
-                  href={`/daily`}
+                  href={`/dashboard`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <p>Daily Report</p>
+                  <p>Dashboard</p>
                 </a>
               </span>
               <span>
                 <a
-                  href="/weekly"
+                  href="/predictor"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <p>Weekly Report</p>
+                  <p>Predictor</p>
                 </a>
               </span>
-              <span>
+              {/* <span>
                 <a
                   href="/monthly"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <p>Monthly Report</p>
                 </a>
-              </span>
+              </span> */}
             </div>
           </nav>
 
