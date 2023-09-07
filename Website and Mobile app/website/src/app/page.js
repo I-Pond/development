@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Ph from "@/components/ph";
-import Temperature from "@/components/temperature";
-import Clarity from "@/components/clarity";
-import Overall from "@/components/overall";
+import style from "@/app/homepage.module.css";
 import { useRef } from "react";
+import Link from "next/link";
 
 export default function Dashboard() {
   const target = useRef(null);
@@ -16,94 +14,61 @@ export default function Dashboard() {
 
   return (
     <>
-      <main className="grid grid-cols-2 gap-2 justify-center items-center h-screen">
-        <div className="col-span-1 pl-10">
-          <h1
-            className="pb-3 text-4xl font-semibold"
-            style={{ color: "#0e2954" }}
-          >
-            My-Ipond
-          </h1>
-          <p className="text-lg pb-3">
-            Welcome to iPond, your comprehensive destination for measuring water
-            turbidity, pH, and temperature, providing you with accurate
+      <div className={`${style.title_container}`}>
+        <div className={`${style.title_text}`}>
+          <h1 className={`${style.title}`}>My-IPond</h1>
+          <p className={`${style.description}`}>
+            Welcome to My-IPond, your comprehensive destination for measuring
+            Water Turbidity, pH, and Temperature, providing you with accurate
             information to maintain the cleanliness and health of your water.
           </p>
-          <button className="try-me w-32 h-10" onClick={handleClick}>
+          <Link href="/" target="_blank" className={`${style.title_link}`}>
             Let's Try
-          </button>
+          </Link>
         </div>
-        <div className="img-card grid grid-cols-2 gap-5 m-3">
-          <Image
-            src="https://images.unsplash.com/photo-1659835347242-97835d671db7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
-            width={250}
-            height={250}
-            sizes="(max-width: 250px)"
-          />
-          <Image
-            src="/screaming_cat.png"
-            width={250}
-            height={250}
-            sizes="(max-width: 250px)"
-          />
-          <Image src="/screaming_cat.png" width={250} height={250} />
-          <Image src="/screaming_cat.png" width={250} height={250} />
-        </div>
-      </main>
+        <Image
+          src="/data/Fisherman.png"
+          alt="Fisherman picture"
+          height={700}
+          width={700}
+          className={`${style.title_image}`}
+        />
+      </div>
 
-      <div className="welcome h-screen" ref={target}>
-        <div className="w-1/2 m-10">
-          <h1
-            className="pb-3 text-4xl font-semibold pt-5 mr-16"
-            style={{ color: "#0e2954" }}
-          >
-            Welcome to iPond, where we make water clarity testing smarter!
-          </h1>
-        </div>
-        <div className="grid grid-cols-4 gap-10 mt-5 text-center font-semibold text-white m-10 items-center justify-center">
-          <div
-            className=""
-            style={{
-              borderRadius: "5px",
-              background:
-                "linear-gradient(180deg,rgba(1, 20, 34, 1) 15%,rgba(25,64,83,255) 50%)",
-            }}
-          >
-            <Ph state="daily" />
-            <h1 className="pt-10 font-serif text-xl mb-10">pH</h1>
+      <div className={`${style.benefit_container}`}>
+        <h1 className={`${style.benefit_title}`}>
+          Manfaat My - Ipond Untuk Petambak Ikan
+        </h1>
+        <div className={`${style.benefit_desc_grid}`}>
+          <div>
+            <p>
+              My I-Pond adalah sebuah inovasi yang dapat membantu petambak dalam
+              budidaya ikan di sungai tambak. Tujuannya adalah untuk memantau
+              kualitas air sungai tambak secara realtime, mengatasi perubahan
+              cuaca dan musim yang mempengaruhi kualitas air, serta mengatasi
+              kurangnya pemantauan berkala dan akurat pada air sungai tambak.
+            </p>
+            <Image
+              src="/data/image 9.png"
+              alt="tools"
+              height={200}
+              width={200}
+            />
           </div>
-          <div
-            className=""
-            style={{
-              borderRadius: "5px",
-              background:
-                "linear-gradient(180deg,rgba(1, 20, 34, 1) 15%,rgba(25,64,83,255) 50%)",
-            }}
-          >
-            <Temperature state="daily" />
-            <h1 className="pt-10 font-serif text-xl mb-10">Temperature</h1>
-          </div>
-          <div
-            className=""
-            style={{
-              borderRadius: "5px",
-              background:
-                "linear-gradient(180deg,rgba(1, 20, 34, 1) 15%,rgba(25,64,83,255) 50%)",
-            }}
-          >
-            <Clarity state="daily" />
-            <h1 className="pt-10 font-serif text-xl mb-10">Clarity</h1>
-          </div>
-          <div
-            className=""
-            style={{
-              borderRadius: "5px",
-              background:
-                "linear-gradient(180deg,rgba(1, 20, 34, 1) 15%,rgba(25,64,83,255) 50%)",
-            }}
-          >
-            <Overall data="9" />
-            <h1 className="pt-10 font-serif text-xl mb-10">Overall</h1>
+          <div>
+            <p>
+              Dengan My I-Pond, para petambak memiliki alat yang kuat untuk
+              meningkatkan produktivitas dan keberlanjutan budidaya ikan di
+              sungai tambak. Dengan pemantauan yang lebih akurat dan respons
+              yang lebih cepat terhadap perubahan kondisi, mereka dapat meraih
+              hasil yang maksimal dalam usaha mereka.
+            </p>
+            <Image
+              src="/data/image 10.png"
+              alt="tools"
+              height={200}
+              width={200}
+            />
           </div>
         </div>
       </div>
